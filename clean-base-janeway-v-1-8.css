@@ -1,0 +1,235 @@
+/* Google Fonts import of main font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* config */
+:root {
+  /* brand colours */
+  --white: rgb(255 255 255);
+  --black: rgb(0 0 0);
+  --journal-brand-color: rgb(255 255 255);
+
+  /* basic config*/
+  --primary-color-fg: var(--black);
+  --primary-color-bg: var(--journal-brand-color);
+  /* --primary-color-bg-lighter: oklch(from --var(--primary-color-bg) .85 c h); */
+  /* --accent-color: unset; */
+  --nav-coulour-fg: var(--primary-color-fg);
+  --nav-color-bg: var(--primary-color-bg);
+  --secondary-color-fg: var(--primary-color-fg);
+  --secondary-color-bg: var(--primary-color-bg);
+  --btn-color-fg: var(--primary-color-fg);
+  --btn-color-bg: var(--primary-color-bg);
+  --font-face: Poppins, sans-serif;
+  --base-font-size: 1.2rem;
+}
+
+/* Resets */
+body {
+  margin: 0;
+}
+
+/* Font family */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+footer p,
+footer pre,
+footer ul li a {
+  font-family: var(--font-face), sans-serif;
+}
+
+/* Base font size and colour */
+body {
+  font-size: var(--base-font-size);
+  color: var(--primary-color-fg);
+}
+
+/* Headings */
+h1 {
+  font-size: 2.3rem;
+}
+h2 {
+  font-size: 2.1rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.6rem;
+}
+h5 {
+  font-size: 1.3rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: 15px;
+}
+
+/* Site header */
+.site-header {
+  padding: 20px;
+  width: 100vw;
+  margin-left: calc((-100vw + 100%) / 2);
+  margin-right: calc((-100vw + 100%) / 2);
+}
+@media (min-width: 1200px) {
+  .site-header {
+    padding-inline: 50px;
+  }
+}
+
+/* Set the journal logo block layout */
+#journal-title {
+  padding-block: 1rem;
+}
+#journal-title img {
+  max-height: 150px;
+  max-width: 300px;
+}
+@media (min-width: 768px) {
+  #journal-title > .row:first-child > .col-md-2:first-child {
+    flex: 0 0 25.333333%;
+    max-width: 25.333333%;
+  }
+}
+
+/* Set the header text and background colours */
+.site-header,
+.navbar-dark .navbar-toggler,
+.navbar-custom {
+  background-color: var(--primary-color-bg);
+}
+.navbar-dark .navbar-toggler,
+.navbar-custom.navbar-dark .navbar-nav .nav-link,
+.navbar-custom.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-custom.navbar-dark .navbar-nav .nav-link:focus {
+  color: var(--primary-color-fg);
+}
+
+/* Set the color of the mobile hamburger to match the text */
+/* Note that if the text is not black, you have to edit the values inside the
+* rgb() function in the encoded SVG below. */
+.navbar-dark .navbar-toggler {
+  border: 1px solid var(--primary-color-fg);
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(0, 0, 0)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Make sure nav dropdowns display above the sticky table of contents, which has z-index: 1020; */
+.navbar-nav .nav-item .dropdown-menu.show {
+  z-index: 1021;
+}
+
+/* Make sure margins are even between nav items */
+#navbarCollapse > ul.navbar-nav:first-child {
+  margin-left: auto;
+  margin-right: unset !important;
+}
+
+/* Custom collapse breakpoint for your .navbar-expand-lg at 1075px */
+@media (max-width: 1074.98px) {
+  /* show the toggler, hide the expanded menu */
+  .navbar.navbar-expand-lg .navbar-toggler {
+    display: block;
+  }
+  .navbar.navbar-expand-lg .navbar-collapse {
+    display: none !important;
+  }
+  .navbar.navbar-expand-lg .navbar-collapse.show {
+    display: block !important;
+  }
+
+  /* stack nav items vertically in mobile */
+  .navbar.navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+  }
+
+  /* optional: make dropdowns full-width in mobile if you like */
+  .navbar.navbar-expand-lg .dropdown-menu {
+    position: static;
+    float: none;
+  }
+}
+
+@media (min-width: 1075px) {
+  /* hide the toggler and show the expanded menu */
+  .navbar.navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+  .navbar.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+
+  /* inline nav items on desktop */
+  .navbar.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+/* Buttons */
+.btn-primary,
+.btn-primary:not(:disabled):not(.disabled):visited {
+  background-color: var(--primary-color-bg);
+  border-color: var(--primary-color-fg);
+  color: var(--primary-color-fg);
+  text-decoration: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):hover {
+  color: var(--primary-color-fg);
+  background-color: var(--primary-color-bg-lighter);
+  border-color: var(--primary-color-fg);
+  transition: background-color 400ms;
+}
+
+/* Article page fixes */
+caption {
+  caption-side: top;
+}
+
+/* Remove the "Article" prefix before the article title */
+#article_opener .card-img-overlay .card-text p.text-uppercase {
+  display: none;
+}
+
+/* Fix a formatting issue with a class from JATS XML conversion */
+.disp-quote {
+  background: #f9f9f9;
+  border-left: 10px solid #70b9a9;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+
+/* Footer fixes */
+.site-footer {
+  border-top: 0px;
+}
+
+/* About page */
+.homepage-element-about {
+  margin-top: 15px;
+}
+
+/* News homepage element */
+.homepage-element-news {
+  .card-title {
+    font-size: 1.3rem;
+  }
+  .card-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+}
