@@ -13,7 +13,7 @@
   --primary-color-bg: var(--journal-brand-color);
   /* --primary-color-bg-lighter: oklch(from --var(--primary-color-bg) .85 c h); */
   /* --accent-color: unset; */
-  --nav-coulour-fg: var(--primary-color-fg);
+  --nav-color-fg: var(--primary-color-fg);
   --nav-color-bg: var(--primary-color-bg);
   --secondary-color-fg: var(--primary-color-fg);
   --secondary-color-bg: var(--primary-color-bg);
