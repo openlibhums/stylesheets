@@ -9,18 +9,18 @@
   --journal-brand-color: rgb(255 255 255);
 
   /* basic config*/
-  --primary-color-fg: var(--black);
-  --primary-color-bg: var(--journal-brand-color);
-  /* --primary-color-bg-lighter: oklch(from --var(--primary-color-bg) .85 c h); */
-  /* --accent-color: unset; */
-  --nav-color-fg: var(--primary-color-fg);
-  --nav-color-bg: var(--primary-color-bg);
-  --secondary-color-fg: var(--primary-color-fg);
-  --secondary-color-bg: var(--primary-color-bg);
-  --btn-color-fg: var(--primary-color-fg);
-  --btn-color-bg: var(--primary-color-bg);
+  /* --secondary-color-fg: var(--black);
+  --secondary-color-bg: var(--journal-brand-color); */
+  --nav-color-fg: var(--black);  /* Change to --white or a light color if brand colour is dark */
+  --nav-color-bg: var(--journal-brand-color);
+  --btn-color-fg: var(--black);  /* Change to --white or a light color if brand colour is dark */
+  --btn-color-bg: var(--journal-brand-color);
+  --body-color-fg: var(--black);
   --font-face: Poppins, sans-serif;
   --base-font-size: 1.2rem;
+  --black-hamburger: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(0, 0, 0)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --white-hamburger: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(255, 255, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --hamburger: var(--black-hamburger); /* Change depending on lightness of brand colour */
 }
 
 /* Resets */
@@ -40,12 +40,13 @@ footer p,
 footer pre,
 footer ul li a {
   font-family: var(--font-face), sans-serif;
+  font-weight: 400;
 }
 
 /* Base font size and colour */
 body {
   font-size: var(--base-font-size);
-  color: var(--primary-color-fg);
+  color: var(--body-color-fg);
 }
 
 /* Headings */
@@ -105,7 +106,7 @@ h6 {
 .site-header,
 .navbar-dark .navbar-toggler,
 .navbar-custom {
-  background-color: var(--primary-color-bg);
+  background-color: var(--nav-color-bg);
 }
 .navbar-dark .navbar-toggler,
 .navbar-custom.navbar-dark .navbar-nav .nav-link,
@@ -121,7 +122,7 @@ h6 {
   border: 1px solid var(--btn-color-fg);
 }
 .navbar-dark .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(0, 0, 0)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: var(--hamburger);
 }
 
 /* Make sure nav dropdowns display above the sticky table of contents, which has z-index: 1020; */
@@ -179,7 +180,7 @@ h6 {
 /* Buttons */
 .btn-primary,
 .btn-primary:not(:disabled):not(.disabled):visited {
-  background-color: var(--primary-color-bg);
+  background-color: var(--btn-color-bg);
   border-color: var(--btn-color-fg);
   color: var(--btn-color-fg);
   text-decoration: none;
@@ -187,7 +188,7 @@ h6 {
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled):hover {
   color: var(--btn-color-fg);
-  background-color: var(--primary-color-bg-lighter);
+  background-color: var(--btn-color-bg);
   border-color: var(--btn-color-fg);
   transition: background-color 400ms;
 }
