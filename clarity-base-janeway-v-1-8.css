@@ -1,0 +1,14 @@
+/* Set the journal logo block layout */
+#journal-title {
+  padding-block: 1rem;
+}
+#journal-title img {
+  max-height: 210px;
+  max-width: 420px;
+}
+@media (min-width: 768px) {
+  #journal-title > .row:first-child > .col-md-2:first-child {
+    flex: 0 0 25.333333%;
+    max-width: 25.333333%;
+  }
+}
